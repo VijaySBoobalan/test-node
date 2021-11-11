@@ -27,6 +27,7 @@ exports.login = async function(req,res){
                     const payload = {id: results[0].id};
                     const Token = jwt.sign({id:results[0].id},'the-super-strong-secrect',{ expiresIn: '1h' });
                     res.send({
+                        "code":200,
                         token:Token
                     });
                 }
